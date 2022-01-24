@@ -2,17 +2,34 @@ class Tonangel {
     constructor(image) {
 		this.image = image
 		this.x = width
-		this.y = 700
-		this.width = 300
+		this.y = 800
+		this.width = 500
 		this.height = 100
+		
+		 
 	}
 
-	position() {
-		console.log(this.y)
+	collision(obstacle) {		
+		if ((game.player.x + game.player.width) > obstacle.x &&
+			game.player.x > (obstacle.x + obstacle.width) &&
+			game.player.y < obstacle.y
+			) {
+			
+			//console.log('Collide')
+			return true		
+		} else {
+			//console.log(this.x)
+			//console.log('No Collision')
+			return false
+			
+			
+		}
 	}
 
 	draw() {
 		this.x -=2
 		image(this.image, this.x, this.y, this.width, this.height)
+		//console.log(this.x)
+		 
 	}
 }

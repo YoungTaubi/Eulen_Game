@@ -28,16 +28,39 @@ class Game {
 	draw() {
 		clear()
 		this.background.draw()
+		circle(this.player.x, this.player.y, 20)
+		circle(this.player.x + this.player.width, this.player.y, 20)
 		this.player.draw()
 		// we want to do sth every x frames -> frameCount (set by P5)
 
-		if (frameCount % 240 === 0) {			
+		if (frameCount % 600 === 0) {			
 			this.tonangeln.push(new Tonangel(this.tonangelImage))			
 		}
 
-		this.tonangeln.forEach(function (tonangel) {
-			tonangel.draw()
+		this.tonangeln.forEach(function (currentTonangel) {
+			currentTonangel.draw()
+			
+			//console.log(currentTonangel.x)
+			console.log('Bin dahinter: ' + (game.player.x > (currentTonangel.x + currentTonangel.width)))
+			console.log('collision:' + game.tonangel.collision(currentTonangel))
+			if (game.tonangel.collision(currentTonangel)) {
+				return game.player.playerColliding = true, game.player.playerAbleToJump = true 
+			}  
 		})
+
+		this.tonangeln = this.tonangeln.filter(function(tonangel) {
+			if (tonangel.x + tonangel.width < 0) {
+				return false 
+			} else {
+				return true
+			}
+		})
+
+		console.log('Player colliding:'+ game.player.playerColliding)
+
+
+		
+		
 
 		
 
