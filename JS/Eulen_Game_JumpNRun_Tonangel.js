@@ -13,7 +13,8 @@ class Tonangel {
 		if (
 			(game.player.x + game.player.width) > obstacle.x &&
 			//game.player.x > (obstacle.x + obstacle.width) &&
-			game.player.y + game.player.height < obstacle.y 
+			game.player.y + game.player.height < obstacle.y &&
+			game.player.y + game.player.height > obstacle.y - 5
 			
 			) {
 			

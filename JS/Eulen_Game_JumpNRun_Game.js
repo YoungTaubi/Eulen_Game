@@ -40,7 +40,13 @@ class Game {
 		}
 
 		this.tonangeln.forEach(function (currentTonangel) {
+			circle(currentTonangel.x, currentTonangel.y -5, 20)
+			circle(currentTonangel.x, currentTonangel.y, 20)
+			circle(currentTonangel.x + currentTonangel.width, currentTonangel.y, 20)
+			circle(currentTonangel.x , currentTonangel.y + currentTonangel.height, 20)
+			circle(currentTonangel.x + currentTonangel.width, currentTonangel.y + currentTonangel.height, 20)
 			currentTonangel.draw()
+
 			
 			//console.log(currentTonangel.x)
 			//console.log('Bin dahinter: ' + (game.player.x > (currentTonangel.x + currentTonangel.width)))

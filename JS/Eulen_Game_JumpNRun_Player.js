@@ -18,7 +18,9 @@ class Player {
 			this.velocity = - 22
 		}
 		if (this.playerAbleToJump) {
+			this.playerColliding = false
 			this.velocity = - 22
+			
 		}
 		
 		
