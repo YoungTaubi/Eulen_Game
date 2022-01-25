@@ -10,9 +10,11 @@ class Tonangel {
 	}
 
 	collision(obstacle) {		
-		if ((game.player.x + game.player.width) > obstacle.x &&
-			game.player.x > (obstacle.x + obstacle.width) &&
-			game.player.y < obstacle.y
+		if (
+			(game.player.x + game.player.width) > obstacle.x &&
+			//game.player.x > (obstacle.x + obstacle.width) &&
+			game.player.y + game.player.height < obstacle.y 
+			
 			) {
 			
 			//console.log('Collide')

@@ -30,10 +30,12 @@ class Game {
 		this.background.draw()
 		circle(this.player.x, this.player.y, 20)
 		circle(this.player.x + this.player.width, this.player.y, 20)
+		circle(this.player.x , this.player.y + this.player.height, 20)
+		circle(this.player.x + this.player.width, this.player.y + this.player.height, 20)
 		this.player.draw()
 		// we want to do sth every x frames -> frameCount (set by P5)
 
-		if (frameCount % 600 === 0) {			
+		if (frameCount % 300 === 0) {			
 			this.tonangeln.push(new Tonangel(this.tonangelImage))			
 		}
 
@@ -41,11 +43,13 @@ class Game {
 			currentTonangel.draw()
 			
 			//console.log(currentTonangel.x)
-			console.log('Bin dahinter: ' + (game.player.x > (currentTonangel.x + currentTonangel.width)))
-			console.log('collision:' + game.tonangel.collision(currentTonangel))
+			//console.log('Bin dahinter: ' + (game.player.x > (currentTonangel.x + currentTonangel.width)))
+			//console.log('collision:' + game.tonangel.collision(currentTonangel))
 			if (game.tonangel.collision(currentTonangel)) {
 				return game.player.playerColliding = true, game.player.playerAbleToJump = true 
-			}  
+			} else if (game.player.x > (currentTonangel.x + currentTonangel.width)) {
+				return game.player.playerColliding = false, game.player.playerAbleToJump = false
+			} 
 		})
 
 		this.tonangeln = this.tonangeln.filter(function(tonangel) {
@@ -57,6 +61,7 @@ class Game {
 		})
 
 		console.log('Player colliding:'+ game.player.playerColliding)
+		console.log('Ich kann springen: ' + game.player.playerAbleToJump)
 
 
 		

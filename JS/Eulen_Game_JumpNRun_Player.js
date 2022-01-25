@@ -13,7 +13,11 @@ class Player {
     jump() {
 		
 		
-		if (this.y >= 800 || this.playerColliding ) {
+		
+		if (this.y >= 800) {
+			this.velocity = - 22
+		}
+		if (this.playerAbleToJump) {
 			this.velocity = - 22
 		}
 		
@@ -24,11 +28,15 @@ class Player {
 		this.velocity += this.gravity // 0.2
 		this.y += this.velocity
 		// if the player moves out of the screen at the bottom then we reposition him
-		if (this.playerColliding) {
-			this.y = game.tonangel.y - this.height +5
-		} else if (this.y >= 800) {
+		 
+		if (this.y >= 800) {
 			this.y = 800		
-		} 
+		} else if (this.playerColliding) {
+			//this.velocity = 0 
+			this.y = game.tonangel.y - this.height +5
+			//this.playerColliding = true
+		}
+		
 			
 		
 		if (this.y < 800 && this.playerColliding === false) {
