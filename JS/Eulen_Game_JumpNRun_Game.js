@@ -40,7 +40,7 @@ class Game {
 		}
 
 		this.tonangeln.forEach((currentTonangel) => {
-			circle(currentTonangel.x, currentTonangel.y -5, 20)
+			//circle(currentTonangel.x, currentTonangel.y -5, 20)
 			circle(currentTonangel.x, currentTonangel.y, 20)
 			circle(currentTonangel.x + currentTonangel.width, currentTonangel.y, 20)
 			circle(currentTonangel.x , currentTonangel.y + currentTonangel.height, 20)

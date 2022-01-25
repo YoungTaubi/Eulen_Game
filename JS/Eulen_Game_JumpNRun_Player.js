@@ -21,6 +21,7 @@ class Player {
 			this.playerColliding = false
 			this.playerAbleToJump = false
 			this.velocity = - 22
+			
 			// setTimeout(this.changeColliding, 100)
 			
 			// this.changeColliding
@@ -44,20 +45,27 @@ class Player {
 		 
 		if (this.y >= 800) {
 			this.y = 800		
-		} else if (this.playerColliding) {
+		} else if (this.playerColliding && this.y + this.height > game.tonangel.y) {
 			//this.velocity = 0 
+			this.playerAbleToJump = true
 			this.y = game.tonangel.y - this.height +5
-			this.playerColliding = true
+			this.playerAbleToJump = true
 		}
 		
 			
 		
-		if (this.y < 800 && this.playerColliding === false) {
-			image(game.playerImageJumping, this.x, this.y, this.width, this.height)
-		} else {
-			image(game.playerImage, this.x, this.y, this.width, this.height)
-		}
+		//if (this.y < 800) {
+		//	image(game.playerImageJumping, this.x, this.y, this.width, this.height)
+		//} else {
+		//	image(game.playerImage, this.x, this.y, this.width, this.height)
+		//}
 
+		if (this.y === 800 || this.y === game.tonangel.y - this.height +5) {
+			image(game.playerImage, this.x, this.y, this.width, this.height)
+		} else {
+			image(game.playerImageJumping, this.x, this.y, this.width, this.height)
+		}
+		
 		//game.tonangel.collision()
 
 		
