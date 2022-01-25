@@ -8,20 +8,31 @@ class Player {
 		this.velocity = 0;
 		this.playerColliding = false
 		this.playerAbleToJump = false
+		this.playerAboveObstacle = false
     }
+
+	changeColliding() {
+		this.playerColliding = true
+	}
 
     jump() {
 		
-		
-		
-		if (this.y >= 800) {
-			this.velocity = - 22
-		}
-		if (this.playerAbleToJump) {
+		if (this.y >= 800 || this.playerAbleToJump) {
 			this.playerColliding = false
+			this.playerAbleToJump = false
 			this.velocity = - 22
+			// setTimeout(this.changeColliding, 100)
+			
+			// this.changeColliding
+			//if (this.playerAboveObstacle) {
+			//	setTimeout(this.changeColliding, 1000) 
+			//}	 
 			
 		}
+		//if (this.playerAbleToJump) {
+		//	this.playerColliding = false
+		//	this.velocity = - 22
+		//}
 		
 		
 	} 
@@ -36,7 +47,7 @@ class Player {
 		} else if (this.playerColliding) {
 			//this.velocity = 0 
 			this.y = game.tonangel.y - this.height +5
-			//this.playerColliding = true
+			this.playerColliding = true
 		}
 		
 			
@@ -52,7 +63,7 @@ class Player {
 		
 	 
 		
-		//console.log('this is the player drawing')
+		console.log('Player colliding: ' + this.playerColliding)
 		
 	}
 }
