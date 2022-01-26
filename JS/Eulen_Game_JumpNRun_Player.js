@@ -2,7 +2,7 @@ class Player {
     constructor() {
         this.width = 265
 		this.height = 344
-		this.x = 100
+		this.x = 200
 		this.y = 800
 		this.gravity = 0.5
 		this.velocity = 0;
@@ -45,13 +45,27 @@ class Player {
 		 
 		if (this.y >= 800) {
 			this.y = 800		
-		} else if (this.playerColliding && this.y + this.height > game.tonangel.y) {
+		} else if (this.playerColliding && this.y + this.height > game.currentTonangel.y) {
 			//this.velocity = 0 
 			this.playerAbleToJump = true
-			this.y = game.tonangel.y - this.height +5
+			this.y = game.currentTonangel.y - this.height +5
 			this.playerAbleToJump = true
 		}
 		
+		//console.log(game.currentTonangel.height)
+		//this.currentTonangel.x + this.currentTonangel.width < game.player.x
+		//(game.currentTonangel && game.currentTonangel.currentTonangel.x + game.currentTonangel.currentTonangel.width < this.x)
+		//if (game.currentTonangel) {
+		//	console.log('Current Tonangel X: ' + game.currentTonangel.currentTonangel.x)
+		//}
+
+		//if (game.currentTonangel && this.x + (this.width / 2) > game.currentTonangel.currentTonangel.x 
+		//	&& this.x + (this.width / 2) < game.currentTonangel.currentTonangel.x + game.currentTonangel.currentTonangel.width
+		//	&& this.y < game.currentTonangel.currentTonangel.y + game.currentTonangel.currentTonangel.height
+		//	) {
+		//		console.log('Underneath')
+		//		this.velocity = 0
+		//	}
 			
 		
 		//if (this.y < 800) {
@@ -60,7 +74,7 @@ class Player {
 		//	image(game.playerImage, this.x, this.y, this.width, this.height)
 		//}
 
-		if (this.y === 800 || this.y === game.tonangel.y - this.height +5) {
+		if (this.y === 800 || this.y === game.currentTonangel.y - this.height +5) {
 			image(game.playerImage, this.x, this.y, this.width, this.height)
 		} else {
 			image(game.playerImageJumping, this.x, this.y, this.width, this.height)
@@ -71,7 +85,7 @@ class Player {
 		
 	 
 		
-		console.log('Player colliding: ' + this.playerColliding)
+		//console.log('Player colliding: ' + this.playerColliding)
 		
 	}
 }

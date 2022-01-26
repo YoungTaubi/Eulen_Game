@@ -2,7 +2,7 @@ class Tonangel {
     constructor(image) {
 		this.image = image
 		this.x = width
-		this.y = 800
+		this.y = random(300,1000)
 		this.width = 500
 		this.height = 100
 		

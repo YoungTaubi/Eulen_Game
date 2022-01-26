@@ -2,14 +2,17 @@ class Game {
 	constructor() {
 		this.backgroundImages
 		this.score = 0
+		
 		//
 	}
 
 	setup() {
+		this.fiftyEuro = new FiftyEuro()
 		this.tonangel = new Tonangel()
 		this.player = new Player()
 		this.background = new Background()
 		this.tonangeln = []
+		this.fiftyEuros = []
 	}
 
 	preload() {
@@ -23,6 +26,7 @@ class Game {
 		this.playerImage = loadImage('/Assets/Frank_Walking_Sketch.gif')
 		this.playerImageJumping = loadImage('/Assets/Frank_Jumping_Sketch.png')
 		this.tonangelImage = loadImage('/Assets/Tonangel_Placeholder.png')
+		this.fiftyEuroImage = loadImage('/Assets/50_Euro_Schein.gif')
 	}
 
 	draw() {
@@ -33,13 +37,19 @@ class Game {
 		circle(this.player.x , this.player.y + this.player.height, 20)
 		circle(this.player.x + this.player.width, this.player.y + this.player.height, 20)
 		
-		// we want to do sth every x frames -> frameCount (set by P5)
+		
 
-		if (frameCount % 600 === 0) {			
+		if (frameCount % 350 === 0) {			
 			this.tonangeln.push(new Tonangel(this.tonangelImage))			
 		}
 
 		this.tonangeln.forEach((currentTonangel) => {
+			
+			//if (currentTonangel.x + currentTonangel.width > 0 && currentTonangel.x < 1600) {
+			//	this.currentTonangel = {currentTonangel}	
+			//}
+			//this.currentTonangel = {currentTonangel}
+			
 			//circle(currentTonangel.x, currentTonangel.y -5, 20)
 			circle(currentTonangel.x, currentTonangel.y, 20)
 			circle(currentTonangel.x + currentTonangel.width, currentTonangel.y, 20)
@@ -60,11 +70,13 @@ class Game {
 
 			if (game.tonangel.collision(currentTonangel)) {
 				this.currentTonangel = currentTonangel
+				
 
 				return game.player.playerColliding = true, 
 				//game.player.playerAbleToJump = true, 
 				game.player.playerAboveObstacle = aboveTonangel
 			} else if (game.player.x > (currentTonangel.x + currentTonangel.width)) {
+				this.currentTonangel = {}
 				return game.player.playerColliding = false, 
 				game.player.playerAbleToJump = false, 
 				game.player.playerAboveObstacle = aboveTonangel
@@ -74,6 +86,24 @@ class Game {
 		this.tonangeln = this.tonangeln.filter(function(tonangel) {
 			if (tonangel.x + tonangel.width < 0) {
 				return false 
+			} else {
+				return true
+			}
+		})
+
+		if (frameCount % 100 === 0) {
+			this.fiftyEuros.push(new FiftyEuro(this.fiftyEuroImage))
+		}
+
+		this.fiftyEuros.forEach((currentEuro) => {
+			currentEuro.draw()			
+		})
+
+		this.fiftyEuros = this.fiftyEuros.filter(euro => {
+			// console.log(this)
+			// also id the coin leaves the screen we remove it from the array
+			if (euro.collision(this.player) || euro.x < 0) {
+				return false
 			} else {
 				return true
 			}
