@@ -23,7 +23,8 @@ class FiftyEuro {
 			// change the score
 			game.score += 50
 			console.log(game.score)
-			return true
+			return true,
+			game.player.playerScore.innerHTML = 'Score: ' + game.score + ' €'
 		}		
 		
 	}

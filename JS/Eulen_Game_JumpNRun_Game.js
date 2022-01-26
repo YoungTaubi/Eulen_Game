@@ -32,10 +32,10 @@ class Game {
 	draw() {
 		clear()
 		this.background.draw()
-		circle(this.player.x, this.player.y, 20)
-		circle(this.player.x + this.player.width, this.player.y, 20)
-		circle(this.player.x , this.player.y + this.player.height, 20)
-		circle(this.player.x + this.player.width, this.player.y + this.player.height, 20)
+		//circle(this.player.x, this.player.y, 20)
+		//circle(this.player.x + this.player.width, this.player.y, 20)
+		//circle(this.player.x , this.player.y + this.player.height, 20)
+		//circle(this.player.x + this.player.width, this.player.y + this.player.height, 20)
 		
 		
 
@@ -59,10 +59,10 @@ class Game {
 			//this.currentTonangel = {currentTonangel}
 			
 			//circle(currentTonangel.x, currentTonangel.y -5, 20)
-			circle(currentTonangel.x, currentTonangel.y, 20)
-			circle(currentTonangel.x + currentTonangel.width, currentTonangel.y, 20)
-			circle(currentTonangel.x , currentTonangel.y + currentTonangel.height, 20)
-			circle(currentTonangel.x + currentTonangel.width, currentTonangel.y + currentTonangel.height, 20)
+			//circle(currentTonangel.x, currentTonangel.y, 20)
+			//circle(currentTonangel.x + currentTonangel.width, currentTonangel.y, 20)
+			//circle(currentTonangel.x , currentTonangel.y + currentTonangel.height, 20)
+			//circle(currentTonangel.x + currentTonangel.width, currentTonangel.y + currentTonangel.height, 20)
 			currentTonangel.draw()
 			
 
@@ -83,7 +83,7 @@ class Game {
 				return game.player.playerColliding = true, 
 				//game.player.playerAbleToJump = true, 
 				game.player.playerAboveObstacle = aboveTonangel
-			} else if (game.player.x > (currentTonangel.x + currentTonangel.width)) {
+			} else if (game.player.x > (currentTonangel.x + currentTonangel.width -50)) {
 				//this.currentTonangel = {}
 				return game.player.playerColliding = false, 
 				game.player.playerAbleToJump = false, 
