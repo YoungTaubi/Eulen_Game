@@ -17,16 +17,16 @@ class Game {
 
 	preload() {
 		this.backgroundImages = [
-			{ src: loadImage('/Assets/20220124_Berlin_City_Skyline_00.jpg'), x: -1400, speed: 0 },
-			{ src: loadImage('/Assets/20220124_Berlin_City_Skyline_01.png'), x: 0, speed: 1 },
-			{ src: loadImage('/Assets/20220124_Berlin_City_Skyline_02.png'), x: 0, speed: 2 },
-			{ src: loadImage('/Assets/20220124_Berlin_City_Skyline_03.png'), x: 0, speed: 3 },
-			{ src: loadImage('/Assets/20220124_Berlin_City_Skyline_04.png'), x: 0, speed: 4 },
+			{ src: loadImage('Assets/20220124_Berlin_City_Skyline_00.jpg'), x: -1400, speed: 0 },
+			{ src: loadImage('Assets/20220124_Berlin_City_Skyline_01.png'), x: 0, speed: 1 },
+			{ src: loadImage('Assets/20220124_Berlin_City_Skyline_02.png'), x: 0, speed: 2 },
+			{ src: loadImage('Assets/20220124_Berlin_City_Skyline_03.png'), x: 0, speed: 3 },
+			{ src: loadImage('Assets/20220124_Berlin_City_Skyline_04.png'), x: 0, speed: 4 },
 		]
-		this.playerImage = loadImage('/Assets/Frank_Walking_Sketch.gif')
-		this.playerImageJumping = loadImage('/Assets/Frank_Jumping_Sketch.png')
-		this.tonangelImage = loadImage('/Assets/Tonangel_Placeholder.png')
-		this.fiftyEuroImage = loadImage('/Assets/50_Euro_Schein.gif')
+		this.playerImage = loadImage('Assets/Frank_Walking_Sketch.gif')
+		this.playerImageJumping = loadImage('Assets/Frank_Jumping_Sketch.png')
+		this.tonangelImage = loadImage('Assets/Tonangel_Placeholder.png')
+		this.fiftyEuroImage = loadImage('Assets/50_Euro_Schein.gif')
 	}
 
 	draw() {
@@ -49,6 +49,9 @@ class Game {
 			//if (currentTonangel.x == undefined) {
 			//	this.currentTonangel = currentTonangel
 			//}
+			if (currentTonangel.x < game.player.x + game.player.width) {
+				this.currentTonangel = currentTonangel
+			}
 
 			 // if player is under the obstacle he cannot jump through it 
       		let tonangleWidth = currentTonangel.x + currentTonangel.width;
@@ -63,9 +66,7 @@ class Game {
       		  }
       		}
 
-			//if (currentTonangel.x < game.player.x + game.player.width) {
-			//	this.currentTonangel = currentTonangel
-			//}
+			
 			
 			//if (currentTonangel.x + currentTonangel.width > 0 && currentTonangel.x < 1600) {
 			//	this.currentTonangel = {currentTonangel}	
