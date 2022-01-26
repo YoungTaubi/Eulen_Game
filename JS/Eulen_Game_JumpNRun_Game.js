@@ -44,14 +44,28 @@ class Game {
 		}
 
 		this.tonangeln.forEach((currentTonangel) => {
+			currentTonangel.draw()
 			//this.currentTonangel = currentTonangel
 			//if (currentTonangel.x == undefined) {
 			//	this.currentTonangel = currentTonangel
 			//}
 
-			if (currentTonangel.x < game.player.x + game.player.width) {
-				this.currentTonangel = currentTonangel
-			}
+			 // if player is under the obstacle he cannot jump through it 
+      		let tonangleWidth = currentTonangel.x + currentTonangel.width;
+      		if (
+      		  this.player.x >= currentTonangel.x &&
+      		  this.player.x <= tonangleWidth &&
+      		  this.player.y >= currentTonangel.y
+      		) {
+      		  if (this.player.y <= currentTonangel.y + currentTonangel.height) {
+      		    //this.player.y = currentTonangel.y + currentTonangel.height
+				  this.player.velocity = 0
+      		  }
+      		}
+
+			//if (currentTonangel.x < game.player.x + game.player.width) {
+			//	this.currentTonangel = currentTonangel
+			//}
 			
 			//if (currentTonangel.x + currentTonangel.width > 0 && currentTonangel.x < 1600) {
 			//	this.currentTonangel = {currentTonangel}	
@@ -63,7 +77,7 @@ class Game {
 			//circle(currentTonangel.x + currentTonangel.width, currentTonangel.y, 20)
 			//circle(currentTonangel.x , currentTonangel.y + currentTonangel.height, 20)
 			//circle(currentTonangel.x + currentTonangel.width, currentTonangel.y + currentTonangel.height, 20)
-			currentTonangel.draw()
+			
 			
 
 			
@@ -77,7 +91,7 @@ class Game {
 			//console.log('above Tonangel: ' + aboveTonangel)
 
 			if (game.tonangel.collision(currentTonangel)) {
-				//this.currentTonangel = currentTonangel
+				this.currentTonangel = currentTonangel
 				
 
 				return game.player.playerColliding = true, 
