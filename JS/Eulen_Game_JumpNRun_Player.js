@@ -4,7 +4,7 @@ class Player {
 		this.height = 344
 		this.x = 200
 		this.y = 800
-		this.gravity = 0.5
+		this.gravity = 0.35
 		this.velocity = 0;
 		this.playerColliding = false
 		this.playerAbleToJump = false
@@ -39,17 +39,22 @@ class Player {
 	} 
 
 	draw() {
+		console.log(game.currentTonangel)
 		this.velocity += this.gravity // 0.2
 		this.y += this.velocity
 		// if the player moves out of the screen at the bottom then we reposition him
 		 
 		if (this.y >= 800) {
-			this.y = 800		
-		} else if (this.playerColliding && this.y + this.height > game.currentTonangel.y) {
-			//this.velocity = 0 
+			this.y = 800
+			this.velocity = 0		
+		} else if (this.playerColliding && this.y + this.height > game.currentTonangel.y 
+					//|| this.playerColliding && this.y + this.height > game.currentTonangel.y
+					) {
+			 
 			this.playerAbleToJump = true
 			this.y = game.currentTonangel.y - this.height +5
 			this.playerAbleToJump = true
+			this.velocity = 0
 		}
 		
 		//console.log(game.currentTonangel.height)

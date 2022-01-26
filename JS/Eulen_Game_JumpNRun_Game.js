@@ -39,11 +39,19 @@ class Game {
 		
 		
 
-		if (frameCount % 350 === 0) {			
+		if (frameCount % 400 === 0) {			
 			this.tonangeln.push(new Tonangel(this.tonangelImage))			
 		}
 
 		this.tonangeln.forEach((currentTonangel) => {
+			//this.currentTonangel = currentTonangel
+			//if (currentTonangel.x == undefined) {
+			//	this.currentTonangel = currentTonangel
+			//}
+
+			if (currentTonangel.x < game.player.x + game.player.width) {
+				this.currentTonangel = currentTonangel
+			}
 			
 			//if (currentTonangel.x + currentTonangel.width > 0 && currentTonangel.x < 1600) {
 			//	this.currentTonangel = {currentTonangel}	
@@ -69,14 +77,14 @@ class Game {
 			//console.log('above Tonangel: ' + aboveTonangel)
 
 			if (game.tonangel.collision(currentTonangel)) {
-				this.currentTonangel = currentTonangel
+				//this.currentTonangel = currentTonangel
 				
 
 				return game.player.playerColliding = true, 
 				//game.player.playerAbleToJump = true, 
 				game.player.playerAboveObstacle = aboveTonangel
 			} else if (game.player.x > (currentTonangel.x + currentTonangel.width)) {
-				this.currentTonangel = {}
+				//this.currentTonangel = {}
 				return game.player.playerColliding = false, 
 				game.player.playerAbleToJump = false, 
 				game.player.playerAboveObstacle = aboveTonangel

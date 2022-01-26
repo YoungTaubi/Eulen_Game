@@ -17,15 +17,18 @@ class Tonangel {
 			// && game.player.y + game.player.height > obstacle.y - 7
 			
 			) {
-			
+			console.log('Velocity :' + game.player.velocity)
 			//console.log('Collide')
 			return true		
+		//} else if (Math.sign(game.player.velocity) === 0
+		//			&& (game.player.x + game.player.width) > obstacle.x
+		//			&& game.player.y + game.player.height > obstacle.y 
+		//			) {
+		//	return true	
 		} else {
 			//console.log(this.x)
 			//console.log('No Collision')
-			return false
-			
-			
+			return false			
 		}
 	}
 

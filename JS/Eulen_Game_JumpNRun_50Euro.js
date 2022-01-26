@@ -16,7 +16,7 @@ class FiftyEuro {
 		let playerX = playerInfo.x + playerInfo.width / 2
 		let playerY = playerInfo.y + playerInfo.height / 2
 		
-		if (dist(fiftyEuroX, fiftyEuroY, playerX, playerY) > 100) {
+		if (dist(fiftyEuroX, fiftyEuroY, playerX, playerY) > 150) {
 			
 			return false			
 		} else {
