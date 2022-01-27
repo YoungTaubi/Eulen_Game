@@ -2,9 +2,9 @@ class Casino {
     constructor(image) {
 		this.image = image
 		this.x = 1800
-		this.y = 800
-		this.width = 400
-		this.height = 200
+		this.y = 530
+		this.width = 500
+		this.height = 500
 		this.enterCasion = document.querySelector('#EnterCasino')
 		this.ableToGoToCasino = false
 

@@ -29,7 +29,7 @@ class Game {
 		this.playerImageJumping = loadImage('Assets/Frank_Jumping.png')
 		this.tonangelImage = loadImage('Assets/Tonangel.png')
 		this.fiftyEuroImage = loadImage('Assets/50_Euro_Schein.gif')
-		this.casinoImage = loadImage('Assets/Casino.jpg')
+		this.casinoImage = loadImage('Assets/Casino.gif')
 	}
 
 	draw() {
@@ -44,7 +44,7 @@ class Game {
 		//circle(this.player.x , this.player.y + this.player.height, 20)
 		//circle(this.player.x + this.player.width, this.player.y + this.player.height, 20)
 		scale(.5)
-		if (frameCount % 2000 === 0) {			
+		if (frameCount % 4000 === 0) {			
 			this.casinos.push(new Casino(this.casinoImage))			
 		}
 
