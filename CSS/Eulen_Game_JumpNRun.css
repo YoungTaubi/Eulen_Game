@@ -19,7 +19,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url(/Assets/BackGround.jpg);
+    background-image: url("/Assets/BackGround.jpg");
     background-position: center;
     background-size: cover;
 }
