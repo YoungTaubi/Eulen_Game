@@ -25,8 +25,8 @@ class Game {
 			{ src: loadImage('Assets/20220124_Berlin_City_Skyline_03.png'), x: 0, speed: 3 },
 			{ src: loadImage('Assets/20220124_Berlin_City_Skyline_04.png'), x: 0, speed: 4 },
 		]
-		this.playerImage = loadImage('Assets/Frank_Walking.png')
-		this.playerImageJumping = loadImage('Assets/Frank_Walking.png')
+		this.playerImage = loadImage('Assets/Frank_Walking.gif')
+		this.playerImageJumping = loadImage('Assets/Frank_Jumping.png')
 		this.tonangelImage = loadImage('Assets/Tonangel.png')
 		this.fiftyEuroImage = loadImage('Assets/50_Euro_Schein.gif')
 		this.casinoImage = loadImage('Assets/Casino.jpg')
