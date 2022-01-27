@@ -1,7 +1,7 @@
 class FiftyEuro {
     constructor(image) {
 		this.image = image
-		this.x = width
+		this.x = 1800
 		this.y = random(100,500)
 		this.width = 100
 		this.height = 100

@@ -1,17 +1,17 @@
 class Tonangel {
     constructor(image) {
 		this.image = image
-		this.x = width
+		this.x = 1800
 		this.y = random(300,1000)
 		this.width = 500
-		this.height = 100
+		this.height = 120
 		
 		 
 	}
 
 	collision(obstacle) {		
 		if (
-			(game.player.x + game.player.width) > obstacle.x &&
+			(game.player.x + game.player.width - 100) > obstacle.x &&
 			//game.player.x > (obstacle.x + obstacle.width) &&
 			game.player.y + game.player.height < obstacle.y 
 			// && game.player.y + game.player.height > obstacle.y - 7
@@ -33,6 +33,7 @@ class Tonangel {
 	}
 
 	draw() {
+		
 		this.x -=2
 		image(this.image, this.x, this.y, this.width, this.height)
 		//console.log(this.x)

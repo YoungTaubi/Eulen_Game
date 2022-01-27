@@ -49,12 +49,12 @@ class Player {
 		if (this.y >= 800) {
 			this.y = 800
 			this.velocity = 0		
-		} else if (game.currentTonangel && this.playerColliding && this.y + this.height > game.currentTonangel.y 
+		} else if (game.currentTonangel && this.playerColliding && this.y + this.height > game.currentTonangel.y +60
 					//|| this.playerColliding && this.y + this.height > game.currentTonangel.y
 					) {
 			 
 			this.playerAbleToJump = true
-			this.y = game.currentTonangel.y - this.height +5
+			this.y = game.currentTonangel.y - this.height + 90
 			this.playerAbleToJump = true
 			this.velocity = 0
 		}
@@ -81,7 +81,7 @@ class Player {
 		//	image(game.playerImage, this.x, this.y, this.width, this.height)
 		//}
 
-		if (this.y === 800 || game.currentTonangel && this.y === game.currentTonangel.y - this.height +5) {
+		if (this.y === 800 || game.currentTonangel && this.y === game.currentTonangel.y - this.height +90) {
 			image(game.playerImage, this.x, this.y, this.width, this.height)
 		} else {
 			image(game.playerImageJumping, this.x, this.y, this.width, this.height)

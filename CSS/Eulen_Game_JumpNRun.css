@@ -1,25 +1,59 @@
 /*Tag´s*/
 
+body {
+    font-family: sans-serif;
+    color: white;
+}
+
+
+
+
 
 
 /*Classes*/
 
 .Container1 {
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-image: url(/Assets/BackGround.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .Container2 {
-    width: 1800px;
+    width: 900px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+}
+
+/*ID´s*/
+
+#P5Container {
+    
+    padding: 0;
+    margin: 0;
+    width: 900px;
+    height: 600px;
 
 }
 
+#Container3 {
+    width: 900px;
+    height: 600px;
+    filter: drop-shadow(15px 10px 4px #8e32a5);
+    background-color: black;  
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+}
 
-
-/*ID´s*/
+#EnterCasino {
+    height: 100px;
+}
