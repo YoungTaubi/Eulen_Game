@@ -1,7 +1,7 @@
 class Game {
 	constructor() {
 		this.backgroundImages
-		this.score = 500
+		this.score = 0
 		
 		//
 	}
