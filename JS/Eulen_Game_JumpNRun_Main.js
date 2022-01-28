@@ -61,8 +61,12 @@ function keyPressed() {
 }
 
 function mousePressed() {
-	if (dist(casinoLevel.buttonX, casinoLevel.buttonY, mouseX, mouseY) < 10) {
-		game.casino.drawCircle()
+	if (casinoLevel.buttonStatus === 0 || casinoLevel.buttonStatus === 1 )
+	if (dist(casinoLevel.buttonX + casinoLevel.buttonWidth / 2, casinoLevel.buttonY + casinoLevel.buttonHight / 2, mouseX, mouseY) < casinoLevel.buttonHight / 2) {
+		casinoLevel.gambleStatus = Math.floor(random(1,3))
+		casinoLevel.gamble()
+		console.log('Button pressed')
+		
 	}
 	
 }

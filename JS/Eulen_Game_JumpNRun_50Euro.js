@@ -22,6 +22,7 @@ class FiftyEuro {
 		} else {
 			// change the score
 			game.score += 50
+			casinoLevel.gambleScore += 50
 			console.log(game.score)
 			return true,
 			game.player.playerScore.innerHTML = 'Score: ' + game.score + ' €'

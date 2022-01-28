@@ -1,12 +1,13 @@
 class Game {
 	constructor() {
 		this.backgroundImages
-		this.score = 0
+		this.score = 500
 		
 		//
 	}
 
 	setup() {
+		//this.casinoLevel = new CasinoLevel()
 		this.casino = new Casino()
 		this.fiftyEuro = new FiftyEuro()
 		this.tonangel = new Tonangel()
