@@ -73,7 +73,7 @@ class Game {
 		
 		this.player.draw()
 
-		if (frameCount % 400 === 0) {			
+		if (frameCount % 380 === 0) {			
 			this.tonangeln.push(new Tonangel(this.tonangelImage))			
 		}
 
