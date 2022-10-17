@@ -59,6 +59,7 @@ body {
 
 .gitHubLink {
     text-decoration: none;
+    color: rgb(255, 0, 174);
     background: linear-gradient(
     45deg,
     rgb(0, 136, 255) 0%,
