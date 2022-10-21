@@ -8,15 +8,15 @@ class CasinoLevel {
         this.buttonHight = 300
         this.gambleStatus = 0
         this.buttonStatus = 0
+        // this.test 
         //this.gambleScore = game.score
 
         //this.button
 
-    }
+    }    
 
+    setup() {   
 
-    setup() {     
-         
     }
 
     preload() {
@@ -29,11 +29,14 @@ class CasinoLevel {
     }
 
     draw() { 
-        if (level === 'casino') {                        
+        if (level === 'casino') {      
+                             
             background(this.backgroundImage, 0, 0, width, height)
-            game.casino.enterCasion.innerHTML = ''            
+            game.casino.enterCasion.innerHTML = '' 
+                
             if (this.buttonStatus === 0) {
-                this.button = image(this.gambleButton01,this.buttonX,this.buttonY,this.buttonWidth,this.buttonHight)
+                this.button = image(this.gambleButton01,this.buttonX,this.buttonY,this.buttonWidth,this.buttonHight) 
+                
             } else if (this.buttonStatus === 1) {
                 this.button = image(this.gambleButton02,this.buttonX,this.buttonY,this.buttonWidth,this.buttonHight) 
             }

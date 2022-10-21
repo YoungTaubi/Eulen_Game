@@ -14,34 +14,33 @@ function preload() {
 	intro.preload()
 	casinoLevel.preload()
 	//soundFormats('mp3')
-	
+
 }
 
-function setup() {	
+function setup() {
 	let myCanvas = createCanvas(900, 600)
 	myCanvas.parent('P5Container')
-	intro.setup()	
+	intro.setup()
 	game.setup()
 	casinoLevel.setup()
-	
-	
+
 }
 
 function draw() {
 	if (level === 'jumpNRun') {
-		
+
 		game.draw()
-		
+
 	} else if (level === 'intro') {
-		
+
 		intro.draw()
 		//clear()
 	} else if (level === 'casino') {
-		
+
 		casinoLevel.draw()
-		
+
 	}
-		
+
 }
 
 
@@ -57,16 +56,17 @@ function keyPressed() {
 			level = 'casino'
 		}
 	}
-	
+
 }
 
 function mousePressed() {
-	if (casinoLevel.buttonStatus === 0 || casinoLevel.buttonStatus === 1 )
-	if (dist(casinoLevel.buttonX + casinoLevel.buttonWidth / 2, casinoLevel.buttonY + casinoLevel.buttonHight / 2, mouseX, mouseY) < casinoLevel.buttonHight / 2) {
-		casinoLevel.gambleStatus = Math.floor(random(1,3))
-		casinoLevel.gamble()
-		console.log('Button pressed')
-		
+	if (casinoLevel.buttonStatus === 0 || casinoLevel.buttonStatus === 1) {
+		if (dist(casinoLevel.buttonX + casinoLevel.buttonWidth / 2, casinoLevel.buttonY + casinoLevel.buttonHight / 2, mouseX, mouseY) < casinoLevel.buttonHight / 2) {
+			casinoLevel.gambleStatus = Math.floor(random(1, 3))
+			casinoLevel.gamble()
+			console.log('Button pressed')
+
+		}
 	}
-	
+
 }
